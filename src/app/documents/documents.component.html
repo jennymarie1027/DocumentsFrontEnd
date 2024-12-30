@@ -1,1 +1,6 @@
-<p>documents works!</p>
+<div *ngFor="let doc of documents">
+    <h4>{{doc.title}}</h4>
+    <p>{{doc.content}}</p>
+    <!-- <button (click)="deleteDocument(doc.id)">Delete</button>
+    <button (click)="editDocument(doc.id)">Edit</button> -->
+</div>
