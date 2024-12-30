@@ -1,6 +1,10 @@
 <div *ngFor="let doc of documents">
     <h4>{{doc.title}}</h4>
     <p>{{doc.content}}</p>
+    <a href="{{doc.file_url}}">Download File</a>
+    <p>{{doc.updated_at}}</p>
+    <p>{{doc.image_url}}</p>
     <!-- <button (click)="deleteDocument(doc.id)">Delete</button>
     <button (click)="editDocument(doc.id)">Edit</button> -->
+    <hr>
 </div>
