@@ -17,7 +17,7 @@ export class ProposalCreateComponent  {
     estimated_hours: new FormControl('', Validators.required),
     hourly_rate: new FormControl('', Validators.required),
     weeks_to_complete: new FormControl('', Validators.required),
-    client_email: new FormControl('', Validators.required),
+    client_email: new FormControl(''),
   })
 
 }
