@@ -9,6 +9,7 @@ import { DocumentsComponent } from './documents/documents.component';
 import { ProposalListComponent } from './proposals/proposal-list/proposal-list.component';
 import { ProposalShowComponent } from './proposals/proposal-show/proposal-show.component';
 import { ProposalCreateComponent } from './proposals/proposal-create/proposal-create.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ProposalCreateComponent } from './proposals/proposal-create/proposal-cr
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

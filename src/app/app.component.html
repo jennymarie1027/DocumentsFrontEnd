@@ -1,9 +1,22 @@
-<h1>Navigation</h1>
-
-<a routerLink="/home">Home</a>
-<a routerLink="/documents">Docs</a>
-<a routerLink="/proposals">Proposals</a>
-<a routerLink="/proposals/new">New Proposal</a>
-
-
-<router-outlet></router-outlet>
+<nav>
+    <div>
+        <ul ngbNav #nav="ngbNav" class="nav-tabs">
+          <li class="nav-item"><a routerLinkActive="active" class="nav-link" routerLink="/home">Home</a></li>
+          <li class="nav-item"><a routerLinkActive="active" class="nav-link" routerLink="/documents">Docs</a></li>
+          <div ngbDropdown class="d-inline-block">
+            <li type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+                Proposals
+            </li>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <li class="nav-item"><a routerLinkActive="active" class="nav-link" routerLink="/proposals">Proposals</a></li>
+                <li class="nav-item"><a routerLinkActive="active" class="nav-link" routerLink="/proposals/new">New Proposal</a></li>
+            </div>
+          </div>
+        
+        </ul>
+    </div>
+    
+</nav>
+<div class="app-body">
+  <router-outlet></router-outlet>
+</div>
