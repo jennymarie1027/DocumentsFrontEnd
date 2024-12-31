@@ -1,0 +1,59 @@
+<h1>Create a proposal</h1>
+
+<div>
+    <form [formGroup]="proposalForm">
+        <div class="form-group">
+            <label for="customer">Customer</label>
+            <input type="text" id="customer" formControlName="customer" class="form-control" placeholder="abc compancy" required>
+        </div>
+        <div class="form-group">
+            <label for="portfolio_url">portfolio_url</label>
+            <input type="text" id="portfolio_url" formControlName="portfolio_url" class="form-control" placeholder="my portforlio url" required>
+        </div>
+        <div class="form-group">
+            <label for="tools">tools</label>
+            <input type="text" id="tools" formControlName="tools" class="form-control" placeholder="tools" required>
+        </div>
+        <div class="form-group">
+            <label for="estimated_hours">estimated_hours</label>
+            <input type="text" id="estimated_hours" formControlName="estimated_hours" class="form-control" placeholder="estimated hrs" required>
+        </div>
+        <div class="form-group">
+            <label for="hourly_rate">hourly_rate</label>
+            <input type="text" id="hourly_rate" formControlName="hourly_rate" class="form-control" placeholder="rate" required>
+        </div>
+        <div class="form-group">
+            <label for="weeks_to_complete">weeks_to_complete</label>
+            <input type="text" id="weeks_to_complete" formControlName="weeks_to_complete" class="form-control" placeholder="total weeks" required>
+        </div>
+        <div class="form-group">
+            <label for="client_email">client_email</label>
+            <input type="text" id="client_email" formControlName="client_email" class="form-control" placeholder="clients email" required>
+        </div>
+    </form>
+</div>
+
+
+<div>
+    <div>
+        <p>Hi {{ proposalForm.value.customer }},</p>
+    
+    
+        <p>It was a pleasure getting to meet with you and review your project requirements, I believe it is a great fit for the types of applications that I build out. Please feel free to check out some of my past projects <a href="{{ proposalForm.value.portfolio_url}}">here</a>.</p>
+    
+    
+        <p>To successfully build out the application I will be utilizing {{ proposalForm.value.tools}}, and a number of other tools to ensure that the project follows industry wide best practices.</p>
+    
+    
+        <p>Ensuring that you are fully informed is one of my top priorities, so in addition to incorporating everything that we discussed, I will also be creating a project management dashboard and sending you a project update message daily so that you can have a transparent view of the development as it takes place.</p>
+    
+    
+        <p>To accomplish the project and meet the requirements that we discussed, I am estimating that it will take {{ proposalForm.value.estimated_hours }} hours in development time to complete. The project should take {{ proposalForm.value.weeks_to_complete }} weeks to complete and with my hourly rate of {{ proposalForm.value.hourly_rate }}/hour, the estimated total will be {{ proposalForm.value.hourly_rate * proposalForm.value.estimated_hours }}.</p>
+    
+    
+        <p>The next step from here is to set up a meeting to finalize the project and sign contracts.</p>
+    
+    
+        <p>I am excited to working with you and build out this project.</p>
+    </div>
+</div>
