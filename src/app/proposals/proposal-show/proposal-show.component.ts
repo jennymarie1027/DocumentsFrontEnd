@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Proposal } from '../proposal';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-proposal-show',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./proposal-show.component.css']
 })
 export class ProposalShowComponent implements OnInit {
+  
+  id: number
+  routeId: any;
 
-  constructor() { }
-
+  constructor(
+    private route: ActivatedRoute
+  ){}
+  
   ngOnInit(): void {
+    this.routeId = this.route.params.subscribe((params: Params) => {
+      this.id = +params['id'];  // + is used to convert string to number
+    })
   }
 
 }

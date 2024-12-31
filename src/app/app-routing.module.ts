@@ -5,6 +5,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { ProposalListComponent } from './proposals/proposal-list/proposal-list.component';
 import { ProposalCreateComponent } from './proposals/proposal-create/proposal-create.component';
+import { ProposalShowComponent } from './proposals/proposal-show/proposal-show.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'documents', component: DocumentsComponent },
   { path: 'proposals', component: ProposalListComponent },
   { path: 'proposals/new', component: ProposalCreateComponent },
+  { path: 'proposal/:id', component: ProposalShowComponent },
 ];
 
 @NgModule({
