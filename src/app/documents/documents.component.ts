@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Document } from './document';
+import { DocumentsService } from '../documents.service';
 
 @Component({
   selector: 'app-documents',
@@ -7,15 +8,20 @@ import { Document } from './document';
   styleUrls: ['./documents.component.css']
 })
 export class DocumentsComponent {
-  documents: Document[] = [
-    {title: 'doc 1', description: 'desc 1', file_url: 'http://google.com', updated_at: 123456, image_url: 'http://google.com'},
-    {title: 'doc 2', description: 'desc 2', file_url: 'http://google.com', updated_at: 7890, image_url: 'http://yahoo.com'},
-    {title: 'doc 3', description: 'desc 3', file_url: 'http://google.com', updated_at: 123456, image_url: 'http://google.com'},
-    {title: 'doc 4', description: 'desc 4', file_url: 'http://google.com', updated_at: 7890, image_url: 'http://yahoo.com'},
-    {title: 'doc 5', description: 'desc 5', file_url: 'http://google.com', updated_at: 123456, image_url: 'http://google.com'},
-    {title: 'doc 6', description: 'desc 6', file_url: 'http://google.com', updated_at: 7890, image_url: 'http://yahoo.com'},
-  ]
+  documents: Document[] = [];
+  errorMessage = 'No Documents Found'
 
+  constructor(private docService: DocumentsService){}
 
+  ngOnInit(): void {
+    this.getDocs();
+  }
+
+  getDocs(): void {
+    this.docService.getDocuments().subscribe((documents) => {
+      this.documents = documents;
+      error => this.errorMessage = <any>error
+    });
+  }
 
 }
