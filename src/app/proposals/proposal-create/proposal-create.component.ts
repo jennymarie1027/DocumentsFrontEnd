@@ -3,6 +3,7 @@ import { Proposal } from '../proposal';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ProposalService } from 'src/app/proposal.service';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-proposal-create',
@@ -29,10 +30,13 @@ export class ProposalCreateComponent  {
   })
 
   generateProposal(){
-    console.log('hi')
-    // this.submitted=true;
-    this.proposalService.createProposal(this.proposalForm.value).subscribe((res) => {
-      console.log('res in generate proposal = ', res) 
-    })
+    this.submitted = true;
+    this.proposalService.createProposal(this.proposalForm.value).subscribe(
+      data => {return true},
+      error => {
+        console.error("Error saving proposal!");
+        return Observable.throw(error);
+      }
+    )
   }
 }
