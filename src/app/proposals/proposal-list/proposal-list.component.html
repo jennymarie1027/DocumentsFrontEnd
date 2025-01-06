@@ -4,7 +4,7 @@
             <h1 class="list-group-item-heading">Proposal List</h1>
         </a>
         <div *ngFor="let prop of proposals">
-            <a routerLink="/proposal/{{ prop.id }}" class="list-group-item list-group-item-action">
+            <a (click)="goToShow(prop)" class="list-group-item list-group-item-action">
                 <h5 class="list-group-item-heading">{{ prop.customer }}</h5>
                 <p class="list-group-item-text">{{ prop.hourly_rate * prop.estimated_hours | currency}} </p>
             </a>

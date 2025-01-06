@@ -5,6 +5,10 @@ import { Observable } from 'rxjs';
 import { ProposalService } from 'src/app/proposal.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { map } from 'rxjs/operators';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { CurrencyPipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-proposal-show',
