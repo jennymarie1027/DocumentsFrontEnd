@@ -50,6 +50,15 @@
                         <label for="client_email">client_email <em> (Optional) </em></label>
                         <input type="email" id="client_email" formControlName="client_email" class="form-control" placeholder="clients email">
                     </div>
+                    <button 
+                        (click)="generateProposal()" 
+                        class="btn btn-outline-info btn-lg" 
+                        type="submit" 
+                        [disabled]="!proposalForm.valid"
+                        [hidden]="submitted"
+                        >
+                        Generate Proposal
+                    </button>
                 </form>
             </div>
         </div>

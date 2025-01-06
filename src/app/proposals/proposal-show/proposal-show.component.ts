@@ -1,13 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Proposal } from '../proposal';
-import { HttpClient, HttpResponse, HttpHeaders, HttpRequest } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { ProposalService } from 'src/app/proposal.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { map } from 'rxjs/operators';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { CurrencyPipe } from '@angular/common';
 
 
 @Component({
